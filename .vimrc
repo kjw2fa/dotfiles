@@ -1,9 +1,43 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+ Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tomtom/tcomment_vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 " 'matchit.vim' is built-in so let's enable it!
 " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
 
-" tab settings
+" tab ettings
 filetype plugin indent on      " Enabling filetype support provides filetype-specific indenting, syntax
                                " highlighting, omni-completion and other useful settings.
 syntax on                      " turn on syntax, required for pathogen
@@ -18,7 +52,8 @@ set hidden                     " Possibility to have more than one
                                " unsaved buffers.
 set incsearch                  " Incremental search, hit '<CR>' to stop.
 set hlsearch                   " Highlights searched phrase
-set smartcase                  " Ignore case sensitivity for searching
+set ignorecase                 " Ignore case sensitivity for searching
+set smartcase                  " Ignore case sensitivity unless capital
 set gdefault                   " Set search replaces to work throughout lines
 set ruler                      " Shows the current line number at the bottom.
                                " right of the screen.
