@@ -1,16 +1,24 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" --------------- VUNDLE PLUGIN MANAGER ---------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" To use Vundle to manage plugins on a new machine
+" 1. Install Vundle
+" 2. Run the ex command :PluginInstall to install all plugins
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
 " let Vundle manage Vundle, required
  Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
@@ -23,21 +31,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " 'matchit.vim' is built-in so let's enable it!
 " Hit '%' on 'if' to jump to 'else'.
 runtime macros/matchit.vim
 
-" tab ettings
+" --------------- TAB SETTINGS ---------------
 filetype plugin indent on      " Enabling filetype support provides filetype-specific indenting, syntax
                                " highlighting, omni-completion and other useful settings.
 syntax on                      " turn on syntax, required for pathogen
@@ -46,7 +45,7 @@ set softtabstop=4              " treats 4 spaces as tab
 set shiftwidth=4               " when indenting with '>', use 4 spaces width
 set expandtab                  " on pressing tab, insert 4 spaces SPACES > TABS
 
-" various settings
+" --------------- VARIOUS SETTINGS ---------------
 set backspace=indent,eol,start " Proper backspace behavior.
 set hidden                     " Possibility to have more than one
                                " unsaved buffers.
@@ -65,11 +64,13 @@ set nowrap                     " Don't wrap lines
 set showcmd                    " Show the current typed command
 set splitright                 " puts cursor in new window when split
 
-" NORMAL MODE MAPPINGS
+" --------------- NORMAL MODE MAPPINGS ---------------
 " map Space to :
 nnoremap <Space> :
+
 " map Q to @q (play macro in q register)
 nnoremap Q @q
+
 " map window switching shortcuts
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j

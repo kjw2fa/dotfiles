@@ -4,11 +4,6 @@
 
 set editing-mode vi
 
-# Switch to block cursor before executing a command.
-# This ensures that opening a file in vim will use a block cursor.
-set keymap vi-insert
-RETURN: "\e\n"
-
 # Full list of commands https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Line-Editing
 $if mode=vi
 
@@ -41,6 +36,13 @@ $if mode=vi
 
     ######## INSERT MODE ########
     set keymap vi-insert
+
+    # Switch to block cursor before executing a command.
+    # This ensures that opening a file in vim will use a block cursor.
+    set keymap vi-insert
+    RETURN: "\e\n"
+
+    # Switches to normal mode when "jk" is pressed in succession.
     "jk": vi-movement-mode
 
 $endif
